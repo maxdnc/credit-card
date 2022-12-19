@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="both-card">
+        <div id="mainbackcard" class="position-cardback" aria-hidden="true">
+          <div class="back-card">
+            <img
+              src="images/bg-card-back.png"
+              alt="Back Credit Card"
+              class="bg-back-card"
+            />
+            <span id="cvg-visual" class="cvg-card">000</span>
+          </div>
+        </div>
+
+        <div id="mainfrontcard" class="front-card" aria-hidden="true">
+          <div class="content-front">
+            <span class="circle"></span>
+            <span id="code-style" class="code-card">0000 0000 0000 0000</span>
+            <div class="name-and-date-wrap">
+              <span id="name-visual" class="name-id-card">
+                Jane Appleseed
+              </span>
+
+              <span class="date-card"
+                ><span id="month-visual">00</span>/<span id="year-visual"
+                  >00</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form method="get" class="form-cb" id="form">
+        <div class="former-input">
+          <label for="card-name">Cardholder Name</label>
+          <input
+            type="text"
+            name="cardholder-name"
+            placeholder="e.g. Jane Appleseed"
+            class="input-style"
+            id="card-name"
+          />
+          <span id="error-name" class="error-form">Error</span>
+        </div>
+
+        <div class="former-input">
+          <label for="card-number">Card Number</label>
+          <input
+            type="text"
+            name="card-number"
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="16"
+            class="input-style"
+            id="card-number"
+          />
+          <span id="error-number" class="error-form">Error</span>
+        </div>
+        <div class="wrapper-down">
+          <div class="date-wrap">
+            <label for="card-month">Exp. Date (mm/yy)</label>
+
+            <input
+              type="text"
+              name="expiration-month"
+              placeholder="MM"
+              maxlength="2"
+              class="input-style"
+              id="card-month"
+            />
+            <input
+              type="text"
+              name="expiration-year"
+              placeholder="YY"
+              maxlength="2"
+              class="input-style"
+              id="card-year"
+            />
+            <span id="error-month" class="error-form">Error</span>
+            <span id="error-year" class="error-form">Error</span>
+          </div>
+
+          <div class="cvc wrap">
+            <label for="card-cvc">CVC</label>
+            <input
+              type="text"
+              name="cvc"
+              maxlength="3"
+              placeholder="e.g. 123"
+              class="input-style"
+              id="card-cvc"
+            />
+            <span id="error-cvc" class="error-form">Error</span>
+          </div>
+        </div>
+
+        <button id="button-sub" class="confirm-button" type="submit">
+          Confirm
+        </button>
+      </form>
+
+      <!-- Completed state start -->
+      <div class="complete-state" id="complete-state">
+        <div class="logo-thank" aria-hidden="true">
+          <img
+            class="validlogo"
+            src="images/icon-complete.svg"
+            alt="Icon Valide Form"
+          />
+        </div>
+        <p class="thank-you">Thank you!</p>
+        <p class="card-detail">We've added your card details</p>
+        <a id="Return button" class="button-end" href="javascript:history.go(0)"
+          >Return</a
+        >
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

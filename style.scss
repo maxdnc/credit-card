@@ -74,12 +74,13 @@ $purple: hsl(278, 94%, 30%);
 main {
   display: flex;
   flex-direction: column;
+  margin: 1rem;
 }
 .both-card {
   margin: 1rem auto;
   display: block;
   position: relative;
-  height: 40vh;
+  min-height: 16rem;
   width: 100%;
   min-width: 20rem;
   max-width: 35rem;
@@ -227,12 +228,12 @@ main {
   margin: 0.5rem 0 1rem 0;
 }
 .error-form {
-  display: none;
+  opacity: 0;
   color: $Red;
   font-size: 0.7rem;
 
   &.active {
-    display: inline-block;
+    opacity: 1;
   }
 }
 
@@ -269,9 +270,18 @@ main {
     border: 1px solid $purple;
   }
 }
+.date-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+}
 .date-wrap .input-style {
   width: 4rem;
   margin-right: 0.3rem;
+}
+.hidenlabel {
+  position: absolute;
+  visibility: hidden;
 }
 
 .wrapper-down {

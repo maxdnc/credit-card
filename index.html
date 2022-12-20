@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="both-card">
+        <div id="mainbackcard" class="position-cardback" aria-hidden="true">
+          <div class="back-card">
+            <img
+              src="images/bg-card-back.png"
+              alt="Back Credit Card"
+              class="bg-back-card"
+            />
+            <span id="cvg-visual" class="cvg-card">000</span>
+          </div>
+        </div>
+
+        <div id="mainfrontcard" class="front-card" aria-hidden="true">
+          <div class="content-front">
+            <span class="circle"></span>
+            <span id="code-style" class="code-card">0000 0000 0000 0000</span>
+            <div class="name-and-date-wrap">
+              <span id="name-visual" class="name-id-card">
+                Jane Appleseed
+              </span>
+
+              <span class="date-card"
+                ><span id="month-visual">00</span>/<span id="year-visual"
+                  >00</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form method="get" class="form-cb" id="form">
+        <div class="former-input">
+          <label for="card-name">Cardholder Name</label>
+          <input
+            type="text"
+            name="cardholder-name"
+            placeholder="e.g. Jane Appleseed"
+            class="input-style"
+            id="card-name"
+          />
+          <span aria-live="polite" id="error-name" class="error-form"></span>
+        </div>
+
+        <div class="former-input">
+          <label for="card-number">Card Number</label>
+          <input
+            type="text"
+            name="card-number"
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="16"
+            class="input-style"
+            id="card-number"
+          />
+          <span id="error-number" class="error-form" aria-live="polite"></span>
+        </div>
+        <div class="wrapper-down">
+          <div class="date-wrap">
+            <div class="labelwrap">
+              <label>Exp. Date (mm/yy)</label>
+              <label hidden for="card-month">year</label>
+              <label hidden for="card-month">month</label>
+            </div>
+
+            <div class="inputwrap">
+              <input
+                type="text"
+                name="expiration-month"
+                placeholder="MM"
+                maxlength="2"
+                class="input-style"
+                id="card-month"
+              />
+
+              <input
+                type="text"
+                name="expiration-year"
+                placeholder="YY"
+                maxlength="2"
+                class="input-style"
+                id="card-year"
+              />
+            </div>
+            <div class="errorwrap">
+              <span
+                aria-live="polite"
+                id="error-month"
+                class="error-form"
+              ></span>
+              <span
+                aria-live="polite"
+                id="error-year"
+                class="error-form"
+              ></span>
+            </div>
+          </div>
+
+          <div class="cvc wrap">
+            <label for="card-cvc">CVC</label>
+            <input
+              type="text"
+              name="cvc"
+              maxlength="3"
+              placeholder="e.g. 123"
+              class="input-style"
+              id="card-cvc"
+            />
+            <span aria-live="polite" id="error-cvc" class="error-form"></span>
+          </div>
+        </div>
+
+        <button
+          id="button-sub"
+          class="confirm-button"
+          type="submit"
+          aria-label="Confirm your card information"
+        >
+          Confirm
+        </button>
+      </form>
+
+      <!-- Completed state start -->
+      <div class="complete-state" id="complete-state">
+        <div class="logo-thank" aria-hidden="true">
+          <img
+            class="validlogo"
+            src="images/icon-complete.svg"
+            alt="Icon Valide Form"
+          />
+        </div>
+        <p aria-live="polite" class="thank-you">Thank you!</p>
+        <p aria-live="polite" class="card-detail">
+          We've added your card details
+        </p>
+        <a
+          id="Return-button"
+          class="button-end"
+          href="javascript:history.go(0)"
+          aria-label="return to main page"
+          >Return</a
+        >
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
